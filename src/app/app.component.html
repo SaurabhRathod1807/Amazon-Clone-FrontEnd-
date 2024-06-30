@@ -1,0 +1,18 @@
+<h2>Amazon Clone</h2>
+<nav>
+<span *ngIf="!clientLoggedIn && !adminLoggedIn" style="align-content: center;"> <a href="register/">UserRegister</a></span>
+
+<span *ngIf="!clientLoggedIn && !adminLoggedIn" style="align-content: center;"><a href="login/">Login</a></span>
+
+<span *ngIf="!clientLoggedIn && !adminLoggedIn" style="align-content: center;"><a href="admin/">AdminLogin</a></span>
+
+<span  style="align-content: center;"><a href="product/">product</a></span>
+
+<span *ngIf="clientLoggedIn" style="align-content: center;"><a href="cart/">Cart</a></span>
+
+<span *ngIf="clientLoggedIn" style="align-content: center;"><a href="order/">Order</a></span>
+
+<span *ngIf="clientLoggedIn || adminLoggedIn" style="align-content: center;"><a (click)="logout()">logout</a></span>
+
+</nav>
+<router-outlet></router-outlet>

@@ -1,0 +1,42 @@
+.container {
+    padding: 20px;
+  }
+  
+  .title {
+    text-align: center;
+    color: #333;
+  }
+  
+  .cart-items {
+    margin-top: 20px;
+  }
+  
+  .cart-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .cart-item p {
+    margin: 0;
+  }
+  
+  .cart-item img {
+    max-width: 100px;
+    max-height: 100px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .cart-item .col {
+    padding: 10px;
+  }
+  
+  @media (min-width: 768px) {
+    .offset-1 {
+      margin-left: 8.333333%;
+    }
+  }
+  

@@ -1,0 +1,30 @@
+<html style="background-color: rgb(234, 226, 226);">
+    <body >
+        
+<span style="color: red;font-size: 30px;display: flex; align-items: center; justify-content: center;">{{message}}</span>
+<br><br>
+
+
+
+
+
+<form>
+    <h1 style="display: flex; align-items: center; justify-content: center;">Amazon Clone</h1>
+    <h3 style="display: flex; align-items: center; justify-content: center;">Admin Panel</h3>
+    <h3 style="display: flex; align-items: center; justify-content: center;">Please enter your email and password</h3>
+    Enter Your Username:
+    <input type="text" name="name" [(ngModel)]="admin.name">
+    <br>
+    Enter Your password:
+    <input type="password" name="password"  [(ngModel)]="admin.password">
+    <br>
+ 
+    <input type="button" value="AdminSingIn" (click)="checkadmin()">
+   
+
+
+
+</form>
+
+    </body>
+</html>

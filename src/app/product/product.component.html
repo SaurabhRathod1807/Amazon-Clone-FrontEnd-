@@ -1,0 +1,41 @@
+<div class="container">
+    <!-- Form for adding new product -->
+    <!-- <form class="form" (ngSubmit)="saveProduct()">
+      <h2>Add New Product</h2>
+      <input type="text" placeholder="Product ID" [(ngModel)]="newProduct.productId" required>
+      <input type="text" placeholder="Name" [(ngModel)]="newProduct.name" required>
+      <input type="number" placeholder="Price" [(ngModel)]="newProduct.price" required>
+      <input type="number" placeholder="Rating" [(ngModel)]="newProduct.rating" required>
+      <input type="text" placeholder="Image URL" [(ngModel)]="newProduct.imageurl" required>
+      <button type="submit">Save Product</button>
+    </form> -->
+  
+    <!-- Product list -->
+    <div class="product-list">
+      <h2>Product List</h2>
+      <div *ngIf="product.length > 0" class="products">
+        <div *ngFor="let product of product" class="product-card">
+          <img [src]="'/assets/resources/'+product.imageurl" alt="{{ product.name }}">
+          <h3>{{ product.name }}</h3>
+          <p>Price: ${{ product.price }}</p>
+          <p>Rating: {{ product.rating }}</p>
+          <button (click)="addToCart(product)" style="margin-right: 10px; background-color: indianred;" class="pl-2 btn btn-secondary">Add to cart</button>
+          <button (click)="addToCart(product)" class="btn btn-primary">Buy Now</button>
+          
+        </div>
+      </div>
+    </div>
+  
+    <!-- Update form (hidden initially, shown when product selected) -->
+    <div *ngIf="selectedProduct" class="form">
+      <h2>Update Product</h2>
+      <form (ngSubmit)="updateProduct()">
+        <input type="text" placeholder="Product ID" [(ngModel)]="selectedProduct.productId" disabled>
+        <input type="text" placeholder="Name" [(ngModel)]="selectedProduct.name" required>
+        <input type="number" placeholder="Price" [(ngModel)]="selectedProduct.price" required>
+        <input type="number" placeholder="Rating" [(ngModel)]="selectedProduct.rating" required>
+        <input type="text" placeholder="Image URL" [(ngModel)]="selectedProduct.imageurl" required>
+        <button type="submit">Update Product</button>
+      </form>
+    </div>
+  </div>

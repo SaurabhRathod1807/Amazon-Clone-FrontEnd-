@@ -1,0 +1,32 @@
+<!-- <h2>Register Here!</h2>
+<h2>Amazon Clone</h2> -->
+<form>
+
+    <h1 style="display: flex; align-items: center; justify-content: center;">Amazon Clone</h1>
+    <h3 style="display: flex; align-items: center; justify-content: center;">User Panel</h3>
+    <h3 style="display: flex; align-items: center; justify-content: center;">Please enter your Details</h3>
+
+    Enter Your UserId:
+    <input type="text" name="username" [(ngModel)]="user.userId">
+    <br>
+
+    Enter Your Name:
+    <input type="text" name="username" [(ngModel)]="user.name">
+    <br>
+    Enter Your Password:
+    <input type="password" name="password" [(ngModel)]="user.password">
+    <br>
+    Enter your Email:
+    <input type="text" name="email" [(ngModel)]="user.email">
+
+
+
+    <br>
+    <br>
+    <input type="button" value="SingUP" (click)="saveuser()">
+    <br>
+    Already Have Account!Then Login here.
+    <input type="button" value="SingIn" (click)="loginhere()">
+
+
+</form>

@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="form">
+        <h2>Add New Product</h2>
+        <input type="text" placeholder="Product ID" [(ngModel)]="newProduct.productId" required>
+        <input type="text" placeholder="Name" [(ngModel)]="newProduct.name" required>
+        <input type="number" placeholder="Price" [(ngModel)]="newProduct.price" required>
+        <input type="number" placeholder="Rating" [(ngModel)]="newProduct.rating" required>
+        <input type="text" placeholder="Image URL" [(ngModel)]="newProduct.imageurl" required>
+        <input type="button" class="btn btn-primary" (click)="saveProduct()" value="Save Product">
+        <input type="button" value="RemoveProduct" (click)="removeproduct()">
+    </div>
+</div>

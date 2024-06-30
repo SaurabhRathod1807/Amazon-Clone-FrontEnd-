@@ -1,0 +1,44 @@
+<!-- <p>order works!</p> -->
+<div class="container">
+    <!-- Cart items display -->
+    <h3 class="title">Customer Order</h3>
+    <br>
+    
+    <div class="cart-items">
+      <h2>Order Items</h2>
+      <div *ngFor="let cart of orderitem" class="cart-item">
+        <p>Product ID: {{ cart.productId }}</p>
+        <div class="row">
+          <div class="col-auto">
+            <img [src]="'/assets/resources/'+cart.imageurl" class="img-responsive center-block"
+              alt="Not Found" onError="this.src='/assets/resources/404.png'">
+          </div>
+         
+          <div class="col card-block offset-1">
+            <br />
+            <h3>{{cart.name}}</h3>
+            <!-- <strong>BRAND:</strong> {{cart.brand}} -->
+            <!-- <br /> -->
+            <strong>PRICE:</strong> {{cart.price}}
+            <br />
+            <!-- <strong>DISCOUNT:</strong> {{cart.discount}}
+            <br /> -->
+            <strong>Rating:</strong> {{cart.rating}}
+            <br />
+          </div>
+          <div class="col card-block">
+            <br />
+            <br />
+            <!-- <button class="btn" (click)="addToOrder(cart.productId)" style="background-color: orange;" >Order Now</button> -->
+            <br />
+            <br />
+            <!-- <button class="btn " style="background-color: red;">Remove</button> -->
+          </div>
+        </div>
+        <!-- Additional cart item details can be displayed here -->
+      </div>
+    </div>
+  </div>
+
+
+  

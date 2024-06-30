@@ -1,0 +1,103 @@
+<div class="container">
+    <!-- Cart items display -->
+    <h3 class="title">Customer Cart</h3>
+    <br>
+    <h5 *ngIf="successMessage!=null && successMessage!=''" class="success-message">
+      {{successMessage}}
+    </h5>
+    <h5 *ngIf="errorMessage!=null && errorMessage!=''" class="error-message">
+      {{errorMessage}}
+    </h5>
+    <div class="cart-items">
+      <h2>Cart Items</h2>
+      <div *ngFor="let cart of cartitem" class="cart-item">
+        <p>Product ID: {{ cart.productId }}</p>
+        <div class="row">
+          <div class="col-auto">
+            <img [src]="'/assets/resources/'+cart.imageurl" class="img-responsive center-block"
+              alt="Not Found" onError="this.src='/assets/resources/404.png'">
+          </div>
+         
+          <div class="col card-block offset-1">
+            <br />
+            <h3>{{cart.name}}</h3>
+            <!-- <strong>BRAND:</strong> {{cart.brand}} -->
+            <!-- <br /> -->
+            <strong>PRICE:</strong> {{cart.price}}
+            <br />
+            <!-- <strong>DISCOUNT:</strong> {{cart.discount}}
+            <br /> -->
+            <strong>Rating:</strong> {{cart.rating}}
+            <br />
+          </div>
+          <div class="col card-block">
+            <br />
+            <br />
+            <button class="btn" (click)="addToOrder(cart.productId)" style="background-color: orange;" >Order Now</button>
+            <br />
+            <br />
+            <button class="btn "  (click)="removeItem(cart.productId)" (click)="reloadpage()" style="background-color: red;">Remove</button>
+            
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+  
+
+
+<!-- <div *ngIf="!viewCartProductDetails">
+  <div *ngFor="let cart of cartitem">
+    {{cart |json}}
+    <div class="cards">
+      <div class="row">
+        <div class="col-auto">
+          <img [src]="'/assets/resources/1001.jpg'" class="img-responsive center-block"
+            alt="Not Found" onError="this.src='assets/resources/404.png'">
+        </div>
+       
+        <div class="col card-block offset-1">
+          <br />
+          <h3>{{cart.name}}</h3>
+          <strong>BRAND:</strong> {{cart.brand}}
+          <br />
+          <strong>PRICE:</strong> {{cart.price}}
+          <br />
+          <strong>DISCOUNT:</strong> {{cart.discount}}
+          <br />
+          <strong>Quantity:</strong> {{cart.quantity}}
+          <br />
+        </div>
+        <div class="col card-block">
+          <br />
+          <br />
+          <button class="btn btn-primary" >Details</button>
+          <br />
+          <br />
+          <button class="btn btn-primary">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!cartitem || cartitem.length==0" class="error-message">
+    No products are added to the cart
+  </div>
+</div> -->
+<div *ngIf="viewCartProductDetails">
+  <div class="row">
+    <div class="col-md-2">
+      <button (click)="viewCartProductDetails=false" class="btn btn-secondary">
+        Back
+      </button>
+    </div>
+  </div>
+  <br>
+  <!-- <view-cart-product-detail [selectedCartProduct]="selectedCartProduct"></view-cart-product-detail> -->
+  <br>
+  <br>
+  <br>
+  <br>
+</div>

@@ -1,0 +1,29 @@
+/* CSS code for the navigation bar and router outlet */
+
+nav {
+    /* set the display, height, and background-color of the nav element */
+    display: flex;
+    height: 60px;
+    background-color: #3CBC8D;
+  }
+  
+  nav a {
+    /* set the color, text-decoration, padding, and margin of the nav links */
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  nav a:hover {
+    /* change the background-color of the nav links when hovered */
+    background-color: #2E8B57;
+  }
+  
+  router-outlet {
+    /* set the display, width, and margin of the router outlet element */
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+  }
+  
