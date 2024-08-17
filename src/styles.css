@@ -7,6 +7,34 @@
  * Copyright 2011-2024 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+ @import "bootstrap/dist/css/bootstrap.min.css";
+ body {
+  background-image: url('/background.jpg'); /* Path relative to src/assets */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: rgb(234, 226, 226);
+}
+
+.container {
+  max-width: 800px;
+}
+
+.product-list .product-card {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 :root,
 [data-bs-theme=light] {
   --bs-blue: #0d6efd;

@@ -21,6 +21,7 @@ export class LogoutComponent {
     sessionStorage.removeItem("name");
     sessionStorage.removeItem("userId");
     alert("User Logout successfully");
+    this.router.navigate(['product']);
 
     // this.userService.logout().subscribe(
     //   response => {

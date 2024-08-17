@@ -26,6 +26,7 @@ constructor(private productservice:ProductService, private cartService: CartServ
   getallproduct(){
     this.productservice.getallproduct().subscribe((data: Product[]) => {
       this.product=data;
+      // window.location.reload();
     },
   (error) => {
     console.error('Error fetching Product' , error);

@@ -1,103 +1,62 @@
 <div class="container">
-    <!-- Cart items display -->
-    <h3 class="title">Customer Cart</h3>
-    <br>
-    <h5 *ngIf="successMessage!=null && successMessage!=''" class="success-message">
-      {{successMessage}}
-    </h5>
-    <h5 *ngIf="errorMessage!=null && errorMessage!=''" class="error-message">
-      {{errorMessage}}
-    </h5>
-    <div class="cart-items">
-      <h2>Cart Items</h2>
-      <div *ngFor="let cart of cartitem" class="cart-item">
-        <p>Product ID: {{ cart.productId }}</p>
-        <div class="row">
-          <div class="col-auto">
-            <img [src]="'/assets/resources/'+cart.imageurl" class="img-responsive center-block"
-              alt="Not Found" onError="this.src='/assets/resources/404.png'">
-          </div>
-         
-          <div class="col card-block offset-1">
-            <br />
-            <h3>{{cart.name}}</h3>
-            <!-- <strong>BRAND:</strong> {{cart.brand}} -->
-            <!-- <br /> -->
-            <strong>PRICE:</strong> {{cart.price}}
-            <br />
-            <!-- <strong>DISCOUNT:</strong> {{cart.discount}}
-            <br /> -->
-            <strong>Rating:</strong> {{cart.rating}}
-            <br />
-          </div>
-          <div class="col card-block">
-            <br />
-            <br />
-            <button class="btn" (click)="addToOrder(cart.productId)" style="background-color: orange;" >Order Now</button>
-            <br />
-            <br />
-            <button class="btn "  (click)="removeItem(cart.productId)" (click)="reloadpage()" style="background-color: red;">Remove</button>
-            
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </div>
+  <!-- Cart items display -->
+  <h3 class="title">Customer Cart</h3>
+  <br>
+  <h5 *ngIf="successMessage" class="success-message">
+    {{ successMessage }}
+  </h5>
+  <h5 *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </h5>
 
-
-  
-
-
-<!-- <div *ngIf="!viewCartProductDetails">
-  <div *ngFor="let cart of cartitem">
-    {{cart |json}}
-    <div class="cards">
+  <div class="cart-items">
+    <h2>Cart Items</h2>
+    <h3>Total Price {{ totalPrice }}</h3>
+    <div *ngFor="let cart of cartitem; let i = index" class="cart-item">
+      <p>Product ID: {{ cart.productId }}</p>
       <div class="row">
         <div class="col-auto">
-          <img [src]="'/assets/resources/1001.jpg'" class="img-responsive center-block"
-            alt="Not Found" onError="this.src='assets/resources/404.png'">
+          <img [src]="'/assets/resources/' + cart.imageurl" class="img-responsive center-block" alt="Not Found"
+            onError="this.src='/assets/resources/404.png'">
         </div>
-       
+
         <div class="col card-block offset-1">
           <br />
-          <h3>{{cart.name}}</h3>
-          <strong>BRAND:</strong> {{cart.brand}}
+          <h3>{{ cart.name }}</h3>
+          <strong>PRICE:</strong> {{ cart.price }}
           <br />
-          <strong>PRICE:</strong> {{cart.price}}
+          <strong>Rating:</strong> {{ cart.rating }}
           <br />
-          <strong>DISCOUNT:</strong> {{cart.discount}}
-          <br />
-          <strong>Quantity:</strong> {{cart.quantity}}
-          <br />
+          <strong>Final Price:</strong> {{ cart.finalPrice }}
         </div>
+
+        <div style="width: 15%;">
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-danger btn-number" (click)="removeQuantity(i,cart.productId)" value="-">
+                <span class="glyphicon glyphicon-minus"></span>
+              </button>
+            </span>
+            <input type="number" name="quant[{{i}}]" class="form-control input-number" [(ngModel)]="cart.quant" min="1"
+              max="100">
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-success btn-number" (click)="addQuantity(i, cart.productId)" value="+">
+                <span class="glyphicon glyphicon-plus"></span>
+              </button>
+            </span>
+          </div>
+        </div>
+
         <div class="col card-block">
           <br />
           <br />
-          <button class="btn btn-primary" >Details</button>
+          <button class="btn" (click)="addToOrder(cart.productId, cart.quant)" style="background-color: orange;">Order
+            Now</button>
           <br />
           <br />
-          <button class="btn btn-primary">Remove</button>
+          <button class="btn " (click)="removeItem(cart.productId)" (click)="reloadpage()" style="background-color: red;">Remove</button>
         </div>
       </div>
     </div>
   </div>
-  <div *ngIf="!cartitem || cartitem.length==0" class="error-message">
-    No products are added to the cart
-  </div>
-</div> -->
-<div *ngIf="viewCartProductDetails">
-  <div class="row">
-    <div class="col-md-2">
-      <button (click)="viewCartProductDetails=false" class="btn btn-secondary">
-        Back
-      </button>
-    </div>
-  </div>
-  <br>
-  <!-- <view-cart-product-detail [selectedCartProduct]="selectedCartProduct"></view-cart-product-detail> -->
-  <br>
-  <br>
-  <br>
-  <br>
 </div>

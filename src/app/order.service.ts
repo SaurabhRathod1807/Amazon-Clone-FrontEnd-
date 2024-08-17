@@ -17,15 +17,26 @@ export class OrderService {
   show(userId:any){
     return this.httpclient.get("http://localhost:8081/amazon/order/show/" + userId);
   }
+
+  remove(userId:any , productId:any){
+    return this.httpclient.delete("http://localhost:8081/amazon/order/remove/"+userId +"/" + productId)
+  }
+
+  getorder(id:any){
+    return this.httpclient.get("http://localhost:8081/amazon/order/getorder/"+ id);
+    }
 }
 
 export class Order{
+  id:any
   userId:string;
    productId:string;
    
+   
  
-   constructor(userId:string, productId:string ){
-     this.userId=UserService.user.userId;
+   constructor(userId:string, productId:string , id:any){
+    this.id=id;
+    this.userId=UserService.user.userId;
      this.productId=ProductService.product.productId;
    }
  }

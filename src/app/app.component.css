@@ -1,29 +1,48 @@
-/* CSS code for the navigation bar and router outlet */
+/* Custom Styles for the Navbar */
+.navbar {
+  /* Custom height for the navbar */
+  height: 60px;
+}
 
-nav {
-    /* set the display, height, and background-color of the nav element */
-    display: flex;
-    height: 60px;
-    background-color: #3CBC8D;
+.navbar .navbar-brand img {
+  /* Adjust the logo size */
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.navbar-nav .nav-item {
+  /* Align items in the center vertically */
+  display: flex;
+  align-items: center;
+}
+
+/* Custom styles for the logout button */
+.navbar-nav .nav-item .nav-link {
+  /* Adjust padding for nav links */
+  padding: 15px 20px;
+}
+
+/* Hover effect for nav links */
+.navbar-nav .nav-link:hover {
+  background-color: #2E8B57; /* Bootstrap's default link color can be overridden */
+}
+
+/* Ensure responsiveness */
+@media (max-width: 992px) {
+  .navbar-nav {
+      /* Align items to the center on mobile */
+      text-align: center;
   }
-  
-  nav a {
-    /* set the color, text-decoration, padding, and margin of the nav links */
-    color: white;
-    text-decoration: none;
-    padding: 20px;
-    margin: 10px;
+
+  .navbar-nav .nav-item {
+      /* Make items stack vertically on mobile */
+      margin: 0;
   }
-  
-  nav a:hover {
-    /* change the background-color of the nav links when hovered */
-    background-color: #2E8B57;
-  }
-  
-  router-outlet {
-    /* set the display, width, and margin of the router outlet element */
-    display: block;
-    width: 80%;
-    margin: 20px auto;
-  }
-  
+}
+
+router-outlet {
+  display: block;
+  width: 100%;
+  margin: 20px auto;
+}

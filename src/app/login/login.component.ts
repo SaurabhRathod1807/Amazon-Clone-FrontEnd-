@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit {
     this.userservice.login(this.user).subscribe(answer =>{
       if(answer){
         this.router.navigate(['product']);
+        // window.location.reload();
         
         sessionStorage.setItem("userId", this.user.userId);
       }

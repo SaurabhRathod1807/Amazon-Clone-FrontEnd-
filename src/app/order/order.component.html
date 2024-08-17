@@ -6,6 +6,7 @@
     
     <div class="cart-items">
       <h2>Order Items</h2>
+      
       <div *ngFor="let cart of orderitem" class="cart-item">
         <p>Product ID: {{ cart.productId }}</p>
         <div class="row">
@@ -25,6 +26,10 @@
             <br /> -->
             <strong>Rating:</strong> {{cart.rating}}
             <br />
+            <!-- <strong>Quantity:</strong> {{cart.quant}} -->
+            <br />
+            <br />
+            <!-- <strong>Subtotal:</strong> {{ cart.finalPrice }} -->
           </div>
           <div class="col card-block">
             <br />
@@ -32,7 +37,7 @@
             <!-- <button class="btn" (click)="addToOrder(cart.productId)" style="background-color: orange;" >Order Now</button> -->
             <br />
             <br />
-            <!-- <button class="btn " style="background-color: red;">Remove</button> -->
+            <button class="btn "  (click)="removeorder(cart.productId)" (click)="reload()" style="background-color: red;">Cancelorder</button>
           </div>
         </div>
         <!-- Additional cart item details can be displayed here -->
